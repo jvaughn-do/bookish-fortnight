@@ -14,6 +14,10 @@ app.get("/html", (req, res) => {
   res.sendFile(path.join(__dirname, '/test.html'));
 })
 
+app.get("/", (req, res) => {
+  res.json({ message: 'Hello from the server!' })
+})
+
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
 })
