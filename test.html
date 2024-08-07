@@ -7,21 +7,10 @@
     </head>
     <body>
                 <script>
-                    async function getData() {
-                    const url = "https://0.0.0.0:8080";
-                          try {
-                            const response = await fetch(url);
-                            if (!response.ok) {
-                              throw new Error(`Response status: ${response.status}`);
-                            }
-                        
-                            const json = await response.json();
-                            console.log(json);
-                          } catch (error) {
-                            console.error(error.message);
-                          }
-                    }
-                    var x = getData()
+                    fetch("https://0.0.0.0:8080")
+                      .then((response) => {
+                        console.log(response.body);
+                      })
                 </script>
     </body>
 </html>
