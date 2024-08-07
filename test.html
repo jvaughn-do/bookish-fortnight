@@ -8,10 +8,8 @@
     <body>
                 <script>
                     const myWorker = new Worker("worker.js");
-                    onload = () => {
-                      myWorker.postMessage("test");
-                      console.log("Message posted to worker");
-                    };
+                    myWorker.postMessage("test");
+                    console.log("Message posted to worker");
                     myWorker.onmessage = (e) => {
                       console.log(e);
                     };
