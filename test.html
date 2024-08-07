@@ -8,13 +8,13 @@
     <body>
                 <script>
                     const myWorker = new Worker("worker.js");
+                    onload = () => {
+                      myWorker.postMessage("test");
+                      console.log("Message posted to worker");
+                    };
                     myWorker.onmessage = (e) => {
                       console.log(e);
                     };
-                    fetch("https://0.0.0.0:8080")
-                      .then((response) => {
-                        console.log(response.body);
-                      })
                 </script>
     </body>
 </html>
