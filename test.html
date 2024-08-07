@@ -7,6 +7,7 @@
     </head>
     <body>
                 <script>
+                    const myWorker = new Worker("worker.js");
                     fetch("https://0.0.0.0:8080")
                       .then((response) => {
                         console.log(response.body);
