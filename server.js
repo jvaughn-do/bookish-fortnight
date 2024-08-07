@@ -10,6 +10,9 @@ app.get("/js", (req, res) => {
   res.sendFile(path.join(__dirname, '/test.js'));
   })
 
+app.get("/worker.js", (req, res) => {
+  res.sendFile(path.join(__dirname, '/worker.js'));
+  })
 app.get("/html", (req, res) => {
   res.sendFile(path.join(__dirname, '/test.html'));
 })
